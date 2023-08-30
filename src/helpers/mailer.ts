@@ -35,11 +35,11 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
       html: `<p>Click on the link below to ${
         emailType === "VERIFY" ? "verify your email" : "reset you password"
       } </p>
-        <a href="${process.env.domain}/verifyemail?token=${hashedToken}">${
+        <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">${
         emailType === "VERIFY" ? "Verify your email" : "Reset you password"
       }</a>
         <p>or copy and paste the link in your browser. <br> ${
-          process.env.domain
+          process.env.DOMAIN
         }/resetpassword?token=${hashedToken}</p>`,
     };
 
